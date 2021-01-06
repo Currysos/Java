@@ -229,17 +229,17 @@ class cell {
     public void updateCell(String _content){
         this.content = _content;
         switch (content) {
-            case "HEAD":
-                cellBackground.setBackground(Color.GREEN);
-                break;
             case "TAIL":
-                cellBackground.setBackground(Color.BLUE);
+                cellBackground.setBackground(Color.getHSBColor((float) 200 / 360, 1, 1));
+                break;
+            case "HEAD":
+                cellBackground.setBackground(Color.getHSBColor((float) 180 / 360, 1, 1));
                 break;
             case "FRUIT":
-                cellBackground.setBackground(Color.RED);
+                cellBackground.setBackground(Color.getHSBColor((float) 20 / 360, 1, 1));
                 break;
             case "EMPTY":
-                cellBackground.setBackground(Color.WHITE);
+                cellBackground.setBackground(Color.getHSBColor((float) 80 / 360, 1, 1));
                 break;
             default:
                 break;
