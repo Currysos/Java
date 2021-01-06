@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9f1df898-81c5-4158-abc6-2fa22066b45f" name="Default Changelist" comment="Reverse function and check if palindrome">
+      <change beforePath="$PROJECT_DIR$/out/production/SuperhardProblems/com/PhoneticPalindrome.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SuperhardProblems/com/PhoneticPalindrome.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SuperhardProblems/com/PronunciationWord.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SuperhardProblems/com/PronunciationWord.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1kChbh2TLQnJj8O4anXoDqvVd1X" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RunManager" selected="Application.MainProgram">
+    <configuration name="MainProgram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.MainProgram" />
+      <module name="SuperhardProblems" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Starter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.Starter" />
+      <module name="SuperhardProblems" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainProgram" />
+        <item itemvalue="Application.Starter" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9f1df898-81c5-4158-abc6-2fa22066b45f" name="Default Changelist" comment="" />
+      <created>1605210556455</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605210556455</updated>
+      <workItem from="1605210557636" duration="6877000" />
+      <workItem from="1605218080471" duration="233000" />
+      <workItem from="1605218330235" duration="4984000" />
+      <workItem from="1605271841672" duration="4214000" />
+    </task>
+    <task id="LOCAL-00001" summary="Java things">
+      <created>1605218870081</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605218870081</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Convert to pro word function">
+      <created>1605220842449</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605220842449</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Get the right PronunciationWord function and check if word exists">
+      <created>1605223334538</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605223334538</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Reverse function and check if palindrome">
+      <created>1605280165030</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605280165030</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="SHOW_OTHER_BRANCHES" value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Java things" />
+    <MESSAGE value="Convert to pro word function" />
+    <MESSAGE value="Get the right PronunciationWord function" />
+    <MESSAGE value="Get the right PronunciationWord function and check if word exists" />
+    <MESSAGE value="Reverse function and check if palindrome" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reverse function and check if palindrome" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="906" y="378" key="#Inspections" timestamp="1605221275459">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="906" y="378" key="#Inspections/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1605221275458" />
+    <state x="1048" y="501" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605215726369">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1048" y="501" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1605215726369" />
+    <state x="1085" y="383" key="#com.intellij.ide.util.MemberChooser" timestamp="1605215648354">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1085" y="383" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1605215648354" />
+    <state x="961" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605221078110">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="961" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1605221078110" />
+    <state x="69" y="127" key="DiffContextDialog" timestamp="1605220857052">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="69" y="127" key="DiffContextDialog/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1605220857052" />
+    <state width="1493" height="143" key="GridCell.Tab.0.bottom" timestamp="1605276385699">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605276385699" />
+    <state width="2517" height="482" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1605223355836" />
+    <state width="1493" height="143" key="GridCell.Tab.0.center" timestamp="1605276385699">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605276385699" />
+    <state width="2517" height="482" key="GridCell.Tab.0.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1605223355836" />
+    <state width="1493" height="143" key="GridCell.Tab.0.left" timestamp="1605276385699">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605276385699" />
+    <state width="2517" height="482" key="GridCell.Tab.0.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1605223355836" />
+    <state width="1493" height="143" key="GridCell.Tab.0.right" timestamp="1605276385699">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605276385699" />
+    <state width="2517" height="482" key="GridCell.Tab.0.right/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1605223355836" />
+    <state width="2517" height="482" key="GridCell.Tab.1.bottom" timestamp="1605223355836">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="482" key="GridCell.Tab.1.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1605223355836" />
+    <state width="2517" height="482" key="GridCell.Tab.1.center" timestamp="1605223355836">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="482" key="GridCell.Tab.1.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1605223355836" />
+    <state width="2517" height="482" key="GridCell.Tab.1.left" timestamp="1605223355836">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="482" key="GridCell.Tab.1.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1605223355836" />
+    <state width="2517" height="482" key="GridCell.Tab.1.right" timestamp="1605223355836">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="482" key="GridCell.Tab.1.right/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1605223355836" />
+    <state x="687" y="423" key="SettingsEditor" timestamp="1605219043941">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="687" y="423" key="SettingsEditor/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1605219043941" />
+    <state x="416" y="258" key="Vcs.Push.Dialog.v2" timestamp="1605280185398">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="416" y="258" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605280185398" />
+    <state x="693" y="438" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1605220860896" />
+    <state x="498" y="300" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1605273561338">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="300" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1605273561338" />
+    <state x="1097" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605219003494">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1097" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1605219003494" />
+  </component>
+</project>
