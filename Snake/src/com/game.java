@@ -98,6 +98,7 @@ public class game {
 
     static void resetGame(){
         System.out.println("Resetting game");
+        frameInterface.frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frameInterface.frame.dispatchEvent(new WindowEvent(frameInterface.frame, WindowEvent.WINDOW_CLOSING));
         init();
     }
@@ -150,6 +151,7 @@ class FrameInterface extends JFrame implements KeyListener {
         frame.setLayout(new GridLayout(size, size));
         frame.setFocusable(true);
         frame.addKeyListener(this);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         cells = new cell[size][size];
         for (int x = 0; x < size; x++){
