@@ -10,7 +10,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class game {
-    static int gridSize;
+    static int gridSizeHorizontal;
+    static int gridSizeVertical;
     static snake SNAKE;
     static FrameInterface frameInterface;
     static Timer timer;
@@ -18,30 +19,37 @@ public class game {
     static int speed;
 
     public static void main(String[] args) {
-        gridSize = 50;
-        speed = 250;
+        gridSizeHorizontal = 70;
+        gridSizeVertical = 50;
+        speed = 200;
         init();
     }
     static void init(){
-        SNAKE = new snake(gridSize / 2, gridSize / 2, 1);
-        frameInterface = new FrameInterface(gridSize);
+        SNAKE = new snake(gridSizeHorizontal / 2, gridSizeVertical - 1, 1);
+        frameInterface = new FrameInterface(gridSizeHorizontal, gridSizeVertical);
         //Start Sequence
         updateTimer(0);
     }
 
     static void keyWasPressed(KeyEvent e){
         switch (e.getKeyChar()){
-            case 'a':
-                SNAKE.rotate("LEFT");
+            case 'w':
+                SNAKE.rotate(1);
                 break;
             case 'd':
-                SNAKE.rotate("RIGHT");
+                SNAKE.rotate(2);
                 break;
-            case 'w':
+            case 's':
+                SNAKE.rotate(3);
+                break;
+            case 'a':
+                SNAKE.rotate(4);
+                break;
+            case 'r':
                 timer.cancel();
                 updateTimer(-10);
                 break;
-            case 's':
+            case 'f':
                 timer.cancel();
                 updateTimer(10);
                 break;
@@ -71,7 +79,7 @@ public class game {
             System.out.println("GAME OVER");
 
             int answer = JOptionPane.showConfirmDialog(frameInterface.frame, "GAME OVER" +
-                    "\nScore: " + (SNAKE.getTailLength() + 1) + " out of " + (gridSize * gridSize) +
+                    "\nScore: " + (SNAKE.getTailLength() + 1) + " out of " + (gridSizeHorizontal * gridSizeVertical) +
                     "\nPlay Again?");
             if (answer == JOptionPane.YES_OPTION) {
                 //Play again
@@ -84,7 +92,7 @@ public class game {
             System.out.println("GAME OVER, YOU WON");
 
             int answer = JOptionPane.showConfirmDialog(frameInterface.frame, "YOU WON" +
-                    "\nYou got a full score of " + (gridSize * gridSize) +
+                    "\nYou got a full score of " + (gridSizeHorizontal * gridSizeVertical) +
                     "\nPlay Again?");
             if (answer == JOptionPane.YES_OPTION) {
                 //Play again
@@ -98,8 +106,7 @@ public class game {
 
     static void resetGame(){
         System.out.println("Resetting game");
-        frameInterface.frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        frameInterface.frame.dispatchEvent(new WindowEvent(frameInterface.frame, WindowEvent.WINDOW_CLOSING));
+        frameInterface.closeFrame();
         init();
     }
 
@@ -108,8 +115,8 @@ public class game {
         frameInterface.clearCells();
         //Move snake
         SNAKE.moveSnake();
-        if(SNAKE.getPosHorizontal() >= gridSize ||
-                SNAKE.getPosVertical() >= gridSize ||
+        if(SNAKE.getPosHorizontal() >= gridSizeHorizontal ||
+                SNAKE.getPosVertical() >= gridSizeVertical ||
                 SNAKE.getPosHorizontal() < 0 ||
                 SNAKE.getPosVertical() < 0){
             endGame("LOSS");
@@ -133,7 +140,7 @@ public class game {
         }
 
         //Got max points
-        if(SNAKE.getTailLength() + 1 == gridSize * gridSize) {
+        if(SNAKE.getTailLength() + 1 == gridSizeHorizontal * gridSizeVertical) {
             endGame("WIN");
         }
     }
@@ -141,27 +148,28 @@ public class game {
 
 class FrameInterface extends JFrame implements KeyListener {
     JFrame frame;
-    int size;
+    int sizeHorizontal;
+    int sizeVertical;
     cell[][] cells;
 
-    FrameInterface(int _size){
-        size = _size;
+    FrameInterface(int _sizeHorizontal, int _sizeVertical){
+        sizeHorizontal = _sizeHorizontal;
+        sizeVertical = _sizeVertical;
         frame = new JFrame("Snake");
-        frame.setSize(15 * size, 15 * size);
-        frame.setLayout(new GridLayout(size, size));
+        frame.setSize(25 * sizeHorizontal, 25 * sizeVertical);
+        frame.setLayout(new GridLayout(sizeVertical, sizeHorizontal, 1, 1));
         frame.setFocusable(true);
         frame.addKeyListener(this);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        cells = new cell[size][size];
-        for (int x = 0; x < size; x++){
-            for (int y = 0; y < size; y++){
-                JButton currentButton = new JButton();
-                currentButton.setForeground(Color.GRAY);
-                currentButton.setBackground(Color.BLACK);
-                currentButton.setFocusPainted(false);
-                frame.add(currentButton);
-                cells[x][y] = new cell(currentButton);
+        cells = new cell[sizeVertical][sizeHorizontal];
+        for (int v = 0; v < sizeVertical; v++){
+            for (int h = 0; h < sizeHorizontal; h++){
+                JLabel currentLabel = new JLabel();
+                currentLabel.setBackground(Color.BLACK);
+                currentLabel.setOpaque(true);
+                frame.add(currentLabel);
+                cells[v][h] = new cell(currentLabel);
             }
         }
         //fruit things
@@ -178,10 +186,10 @@ class FrameInterface extends JFrame implements KeyListener {
     }
 
     public void clearCells(){
-        for (int x = 0; x < size; x++){
-            for (int y = 0; y < size; y++){
-                if(!cells[x][y].getContent().equals("FRUIT")) {
-                    cells[x][y].updateCell("EMPTY");
+        for (int v = 0; v < sizeVertical; v++){
+            for (int h = 0; h < sizeHorizontal; h++){
+                if(!cells[v][h].getContent().equals("FRUIT")) {
+                    cells[v][h].updateCell("EMPTY");
                 }
             }
         }
@@ -204,22 +212,26 @@ class FrameInterface extends JFrame implements KeyListener {
 
     public void updateFruit(){
         ArrayList<cell> emptyCells = new ArrayList<>();
-        for (int x = 0; x < size; x++){
-            for (int y = 0; y < size; y++){
-                if(cells[x][y].getContent().equals("EMPTY")){
-                    emptyCells.add(cells[x][y]);
+        for (int v = 0; v < sizeVertical; v++){
+            for (int h = 0; h < sizeHorizontal; h++){
+                if(cells[v][h].getContent().equals("EMPTY")){
+                    emptyCells.add(cells[v][h]);
                 }
             }
         }
         Random rand = new Random();
         emptyCells.get(rand.nextInt(emptyCells.size())).updateCell("FRUIT");
     }
+
+    public void closeFrame(){
+        frame.setVisible(false);
+    }
 }
 class cell {
-    JButton cellBackground;
+    JLabel cellBackground;
     String content;
 
-    public cell(JButton cellBackground) {
+    public cell(JLabel cellBackground) {
         this.cellBackground = cellBackground;
         this.content = "EMPTY";
     }

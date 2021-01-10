@@ -70,23 +70,8 @@ public class snake {
         }
     }
 
-    public void rotate(String direction){
-        switch (direction){
-            case "RIGHT":
-                dir++;
-                if(dir == 5){
-                    dir = 1;
-                }
-                break;
-            case "LEFT":
-                dir--;
-                if(dir == 0){
-                    dir = 4;
-                }
-                break;
-            default:
-                break;
-        }
+    public void rotate(int direction){
+        dir = direction;
     }
 
     public ArrayList<tail> getTails() {
