@@ -7,8 +7,12 @@ class cell {
     JLabel cellBackground;
     String content;
 
+    int cycleValue = 0;
+
     public cell(JLabel cellBackground) {
         this.cellBackground = cellBackground;
+        cellBackground.setHorizontalAlignment(0);
+        cellBackground.setVerticalAlignment(0);
         this.content = "EMPTY";
     }
 
@@ -35,5 +39,13 @@ class cell {
                 break;
 
         }
+    }
+
+    public void setCycleValue(int value){
+        cycleValue = value;
+        cellBackground.setText(String.valueOf(value));
+    }
+    public int getCycleValue(){
+        return cycleValue;
     }
 }

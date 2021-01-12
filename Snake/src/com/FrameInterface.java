@@ -12,6 +12,7 @@ class FrameInterface extends JFrame implements KeyListener {
     int sizeHorizontal;
     int sizeVertical;
     cell[][] cells;
+    cell fruitCell;
 
     FrameInterface(int _sizeHorizontal, int _sizeVertical){
         sizeHorizontal = _sizeHorizontal;
@@ -45,6 +46,18 @@ class FrameInterface extends JFrame implements KeyListener {
     public cell getCell(int horizontalPos, int verticalPos){
         return cells[verticalPos][horizontalPos];
     }
+    public cell getCellFromValue(int value){
+        if(value == Integer.MAX_VALUE) { return null; }
+
+        for (int v = 0; v < sizeVertical; v++){
+            for (int h = 0; h < sizeHorizontal; h++){
+                if(cells[v][h].getCycleValue() == value){
+                    return cells[v][h];
+                }
+            }
+        }
+        return null;
+    }
 
     public void clearCells(){
         for (int v = 0; v < sizeVertical; v++){
@@ -66,7 +79,10 @@ class FrameInterface extends JFrame implements KeyListener {
             }
         }
         Random rand = new Random();
-        emptyCells.get(rand.nextInt(emptyCells.size())).updateCell("FRUIT");
+        fruitCell = emptyCells.get(rand.nextInt(emptyCells.size()));
+        fruitCell.updateCell("FRUIT");
+        System.out.println("Added fruit to cell: " + fruitCell.getCycleValue());
+        System.out.println("Number of empty cells: " + emptyCells.size());
     }
 
     public void closeFrame(){
@@ -76,7 +92,9 @@ class FrameInterface extends JFrame implements KeyListener {
     @Override
     public void keyTyped(KeyEvent e) {}
     @Override
-    public void keyPressed(KeyEvent e) {}
+    public void keyPressed(KeyEvent e) {
+        game.keyWasPressed(e);
+    }
     @Override
     public void keyReleased(KeyEvent e) {}
 }

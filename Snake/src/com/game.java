@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.awt.event.KeyListener;
 
 public class game {
     static int gridSizeHorizontal;
@@ -12,17 +13,24 @@ public class game {
     static FrameInterface frameInterface;
     static Timer timer;
 
+    static ai AI;
+
     static int speed;
 
+    static final boolean useAI = true;
+
     public static void main(String[] args) {
-        gridSizeHorizontal = 70;
-        gridSizeVertical = 50;
+        gridSizeHorizontal = 100;
+        gridSizeVertical = 70;
         speed = 200;
         init();
     }
     static void init(){
-        SNAKE = new snake(gridSizeHorizontal / 2, gridSizeVertical - 1, 1);
+        SNAKE = new snake(2, 0, 2);
         frameInterface = new FrameInterface(gridSizeHorizontal, gridSizeVertical);
+        hamiltonianCycle hamilton = new hamiltonianCycle(gridSizeHorizontal, gridSizeVertical, frameInterface);
+        if (useAI) { AI = new ai(); }
+
         //Start Sequence
         updateTimer(0);
     }
@@ -63,6 +71,7 @@ public class game {
         timer.schedule(new TimerTask() {
             @Override
             public void run(){
+                if (useAI) { AI.updateCycle(); }
                 game.update();
             }
         }, speed, speed);
@@ -118,10 +127,12 @@ public class game {
             endGame("LOSS");
         }
 
+        boolean ateFruit = false;
         //Ate fruit
         if(frameInterface.getCell(SNAKE.getPosHorizontal(), SNAKE.getPosVertical()).getContent().equals("FRUIT")){
             SNAKE.addTail = true;
-            frameInterface.updateFruit();
+            ateFruit = true;
+
         }
 
         //Update ui
@@ -130,13 +141,16 @@ public class game {
             frameInterface.updateCell(SNAKE.getTails().get(i).getPosHorizontal(), SNAKE.getTails().get(i).getPosVertical(), "TAIL");
         }
 
+        //if ate fruit, spawn new fruit
+        if(ateFruit) { frameInterface.updateFruit(); }
+
         //Hit itself
         if(frameInterface.getCell(SNAKE.getPosHorizontal(), SNAKE.getPosVertical()).getContent().equals("TAIL")) {
             endGame("LOSS");
         }
 
         //Got max points
-        if(SNAKE.getTailLength() + 1 == gridSizeHorizontal * gridSizeVertical) {
+        if(SNAKE.getTailLength() + 2 == gridSizeHorizontal * gridSizeVertical) {
             endGame("WIN");
         }
     }

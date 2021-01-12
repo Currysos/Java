@@ -12,7 +12,8 @@ public class snake {
 
     public snake(int posHorizontal, int posVertical, int dir) {
         this.tails = new ArrayList<tail>();
-        this.tails.add(new tail(posHorizontal, posVertical - 1));
+        this.tails.add(new tail(posHorizontal - 1, posVertical));
+        this.tails.add(new tail(posHorizontal - 2, posVertical));
         this.posVertical = posVertical;
         this.posHorizontal = posHorizontal;
         this.dir = dir;
@@ -31,6 +32,7 @@ public class snake {
     public int getTailLength(){
         return tails.size();
     }
+    public tail getTail(int tailIndex) { return tails.get(tailIndex); }
 
     public void moveSnake(){
         //Move and add tail
@@ -71,7 +73,28 @@ public class snake {
     }
 
     public void rotate(int direction){
-        dir = direction;
+        switch (dir) {
+            case 1:
+                if(direction != 3){
+                    dir = direction;
+                }
+                break;
+            case 2:
+                if(direction != 4){
+                    dir = direction;
+                }
+                break;
+            case 3:
+                if(direction != 1){
+                    dir = direction;
+                }
+                break;
+            case 4:
+                if(direction != 2){
+                    dir = direction;
+                }
+                break;
+        }
     }
 
     public ArrayList<tail> getTails() {
@@ -92,6 +115,9 @@ class tail {
     }
     public int getPosVertical() {
         return posVertical;
+    }
+    public int getTailCellValue(){
+        return game.frameInterface.getCell(posHorizontal, posVertical).getCycleValue();
     }
 
     public void setPosition(int horizontal, int vertical){
