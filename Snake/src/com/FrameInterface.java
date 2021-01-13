@@ -18,7 +18,7 @@ class FrameInterface extends JFrame implements KeyListener {
         sizeHorizontal = _sizeHorizontal;
         sizeVertical = _sizeVertical;
         frame = new JFrame("Snake");
-        frame.setSize(25 * sizeHorizontal, 25 * sizeVertical);
+        frame.setSize((int) (800 * (1.0f * sizeHorizontal/sizeVertical)), 800);
         frame.setLayout(new GridLayout(sizeVertical, sizeHorizontal, 1, 1));
         frame.setFocusable(true);
         frame.addKeyListener(this);
@@ -35,6 +35,7 @@ class FrameInterface extends JFrame implements KeyListener {
             }
         }
         //fruit things
+        clearCells();
         updateFruit();
 
         frame.setVisible(true);
@@ -62,9 +63,7 @@ class FrameInterface extends JFrame implements KeyListener {
     public void clearCells(){
         for (int v = 0; v < sizeVertical; v++){
             for (int h = 0; h < sizeHorizontal; h++){
-                if(!cells[v][h].getContent().equals("FRUIT")) {
-                    cells[v][h].updateCell("EMPTY");
-                }
+                cells[v][h].updateCell("EMPTY");
             }
         }
     }

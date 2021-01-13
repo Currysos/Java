@@ -18,17 +18,18 @@ public class game {
     static int speed;
 
     static final boolean useAI = true;
+    static boolean gameIsRunning = true;
 
     public static void main(String[] args) {
-        gridSizeHorizontal = 100;
-        gridSizeVertical = 70;
+        gridSizeHorizontal = 30;
+        gridSizeVertical = 30;
         speed = 200;
         init();
     }
     static void init(){
         SNAKE = new snake(2, 0, 2);
         frameInterface = new FrameInterface(gridSizeHorizontal, gridSizeVertical);
-        hamiltonianCycle hamilton = new hamiltonianCycle(gridSizeHorizontal, gridSizeVertical, frameInterface);
+        new hamiltonianCycle(gridSizeHorizontal, gridSizeVertical, frameInterface);
         if (useAI) { AI = new ai(); }
 
         //Start Sequence
@@ -56,6 +57,15 @@ public class game {
             case 'f':
                 timer.cancel();
                 updateTimer(10);
+                break;
+            case 'p':
+                if(gameIsRunning) {
+                    timer.cancel();
+                    gameIsRunning = false;
+                } else {
+                    updateTimer(0);
+                    gameIsRunning = true;
+                }
                 break;
             default:
                 break;
@@ -85,12 +95,8 @@ public class game {
 
             int answer = JOptionPane.showConfirmDialog(frameInterface.frame, "GAME OVER" +
                     "\nScore: " + (SNAKE.getTailLength() + 1) + " out of " + (gridSizeHorizontal * gridSizeVertical) +
-                    "\nPlay Again?");
+                    "\nQuit?");
             if (answer == JOptionPane.YES_OPTION) {
-                //Play again
-                resetGame();
-            } else if (answer == JOptionPane.NO_OPTION) {
-                //Close
                 System.exit(0);
             }
         }else if (condition.equals("WIN")){
@@ -98,12 +104,8 @@ public class game {
 
             int answer = JOptionPane.showConfirmDialog(frameInterface.frame, "YOU WON" +
                     "\nYou got a full score of " + (gridSizeHorizontal * gridSizeVertical) +
-                    "\nPlay Again?");
+                    "\nQuit?");
             if (answer == JOptionPane.YES_OPTION) {
-                //Play again
-                resetGame();
-            } else if (answer == JOptionPane.NO_OPTION) {
-                //Close
                 System.exit(0);
             }
         }
@@ -116,10 +118,12 @@ public class game {
     }
 
     static void update(){
-        //clear cells
-        frameInterface.clearCells();
+        int[] lastTailPos = {SNAKE.getTails().get(SNAKE.getTailLength() - 1).getPosHorizontal(), SNAKE.getTails().get(SNAKE.getTailLength() - 1).getPosVertical()};
+        int[] lastHeadPos = {SNAKE.getPosHorizontal(), SNAKE.getPosVertical()};
+
         //Move snake
         SNAKE.moveSnake();
+
         if(SNAKE.getPosHorizontal() >= gridSizeHorizontal ||
                 SNAKE.getPosVertical() >= gridSizeVertical ||
                 SNAKE.getPosHorizontal() < 0 ||
@@ -135,19 +139,18 @@ public class game {
 
         }
 
-        //Update ui
-        frameInterface.updateCell(SNAKE.getPosHorizontal(), SNAKE.getPosVertical(), "HEAD");
-        for (int i = 0; i < SNAKE.getTailLength(); i++){
-            frameInterface.updateCell(SNAKE.getTails().get(i).getPosHorizontal(), SNAKE.getTails().get(i).getPosVertical(), "TAIL");
-        }
-
-        //if ate fruit, spawn new fruit
-        if(ateFruit) { frameInterface.updateFruit(); }
-
         //Hit itself
         if(frameInterface.getCell(SNAKE.getPosHorizontal(), SNAKE.getPosVertical()).getContent().equals("TAIL")) {
             endGame("LOSS");
         }
+
+        //Update ui
+        frameInterface.updateCell(SNAKE.getPosHorizontal(), SNAKE.getPosVertical(), "HEAD");
+        frameInterface.updateCell(lastHeadPos[0], lastHeadPos[1], "TAIL");
+        frameInterface.updateCell(lastTailPos[0], lastTailPos[1], "EMPTY");
+
+        //if ate fruit, spawn new fruit
+        if(ateFruit) { frameInterface.updateFruit(); }
 
         //Got max points
         if(SNAKE.getTailLength() + 2 == gridSizeHorizontal * gridSizeVertical) {
