@@ -4,13 +4,25 @@ import java.util.Arrays;
 
 public class ai {
     int[] cellValues;
-    int currentCellValue, fruitCellValue, tailValue, maxTailValue;
+    int currentCellValue, fruitCellValue, tailValue, target = 3;
     boolean goingToFruit = false;
 
     public void updateCycle(){
         //init variables
         currentCellValue = game.frameInterface.getCell(game.SNAKE.getPosHorizontal(), game.SNAKE.getPosVertical()).getCycleValue();
         fruitCellValue = game.frameInterface.fruitCell.getCycleValue();
+
+        if(currentCellValue == target){
+            //hit the target
+            if(target < fruitCellValue || !goingToFruit){
+                target = fruitCellValue;
+                goingToFruit = true;
+            } else {
+                target = (game.gridSizeHorizontal * game.gridSizeVertical) - 1;
+                goingToFruit = false;
+            }
+        }
+
         tailValue = game.SNAKE.getTail(game.SNAKE.getTailLength() - 1).getTailCellValue();
 
         int[] bodyValues = new int[game.SNAKE.getTailLength() + 1];
@@ -26,9 +38,9 @@ public class ai {
 
 
         //See if we can go to closest
-        int closest = closestValue(cellValues, fruitCellValue);
-        System.out.println("Target: " + fruitCellValue);
-        if(!(tailValue <= closest && closest <= bodyValues[bodyValues.length - 1]) && closest > currentCellValue && fruitCellValue > closest && fruitCellValue > tailValue) {
+        int closest = closestValue(cellValues, target);
+        System.out.println("Target: " + target);
+        if(!(tailValue <= closest && closest <= bodyValues[bodyValues.length - 1]) && closest > currentCellValue && target > closest && target > tailValue) {
             System.out.println("Going for closest. Turning towards " + closest);
             calculateRotation(closest);
             return;
