@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.awt.event.KeyListener;
 
 public class game {
     static int gridSizeHorizontal;
@@ -22,7 +21,7 @@ public class game {
 
     public static void main(String[] args) {
         gridSizeHorizontal = 16;
-        gridSizeVertical = 12;
+        gridSizeVertical = 9;
         speed = 200;
         init();
     }
