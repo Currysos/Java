@@ -9,6 +9,8 @@ import java.util.Random;
 
 class FrameInterface extends JFrame implements KeyListener {
     JFrame frame;
+    JPanel gamePanel, UIPanel;
+    JLabel scoreLabel, currentControlModeLabel, speedLabel;
     int sizeHorizontal;
     int sizeVertical;
     cell[][] cells;
@@ -17,12 +19,43 @@ class FrameInterface extends JFrame implements KeyListener {
     FrameInterface(int _sizeHorizontal, int _sizeVertical){
         sizeHorizontal = _sizeHorizontal;
         sizeVertical = _sizeVertical;
+
+        //------frame------
         frame = new JFrame("Snake");
-        frame.setSize((int) (800 * (1.0f * sizeHorizontal/sizeVertical)), 800);
-        frame.setLayout(new GridLayout(sizeVertical, sizeHorizontal, 1, 1));
+        frame.setSize((int) (1000 * (1.0f * sizeHorizontal/sizeVertical)), 1000);
         frame.setFocusable(true);
         frame.addKeyListener(this);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new BorderLayout());
+
+        //------Game panel------
+        gamePanel = new JPanel();
+        gamePanel.setLayout(new GridLayout(sizeVertical, sizeHorizontal, 1, 1));
+
+        //------UI Panel------
+        UIPanel = new JPanel();
+        UIPanel.setLayout(new GridLayout(1, 3));
+
+        //------Text labels------
+        scoreLabel = new JLabel("Score: " + game.SNAKE.getTailLength() + 1);
+        scoreLabel.setHorizontalAlignment(0);
+        scoreLabel.setVerticalAlignment(0);
+
+        if(game.useAI){
+            currentControlModeLabel = new JLabel("Control type: AI");
+        } else {
+            currentControlModeLabel = new JLabel("Control type: Player");
+        }
+        currentControlModeLabel.setHorizontalAlignment(0);
+        currentControlModeLabel.setVerticalAlignment(0);
+
+        speedLabel = new JLabel("Delay: " + game.speed);
+        scoreLabel.setHorizontalAlignment(0);
+        scoreLabel.setVerticalAlignment(0);
+
+        UIPanel.add(scoreLabel);
+        UIPanel.add(currentControlModeLabel);
+        UIPanel.add(speedLabel);
 
         cells = new cell[sizeVertical][sizeHorizontal];
         for (int v = 0; v < sizeVertical; v++){
@@ -30,13 +63,16 @@ class FrameInterface extends JFrame implements KeyListener {
                 JLabel currentLabel = new JLabel();
                 currentLabel.setBackground(Color.BLACK);
                 currentLabel.setOpaque(true);
-                frame.add(currentLabel);
+                gamePanel.add(currentLabel);
                 cells[v][h] = new cell(currentLabel);
             }
         }
         //fruit things
         clearCells();
         updateFruit();
+
+        frame.add(UIPanel, BorderLayout.PAGE_START);
+        frame.add(gamePanel, BorderLayout.CENTER);
 
         frame.setVisible(true);
     }
@@ -94,6 +130,20 @@ class FrameInterface extends JFrame implements KeyListener {
 
     public void closeFrame(){
         frame.setVisible(false);
+    }
+
+    public void updateScoreLabel(int newScore){
+        scoreLabel.setText("Score: " + newScore);
+    }
+    public void updateSpeedLabel(int newSpeed){
+        speedLabel.setText("Delay: " + newSpeed);
+    }
+    public void updateCurrentControlModeLabel(boolean useAIControl){
+        if(useAIControl){
+            currentControlModeLabel.setText("Control type: AI");
+        } else {
+            currentControlModeLabel.setText("Control type: Player");
+        }
     }
 
     @Override

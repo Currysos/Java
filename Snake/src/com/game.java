@@ -80,6 +80,7 @@ public class game {
         if(speed < 1){
             speed = 1;
         }
+        frameInterface.updateSpeedLabel(speed);
         timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
@@ -97,7 +98,7 @@ public class game {
             System.out.println("GAME OVER");
 
             int answer = JOptionPane.showConfirmDialog(frameInterface.frame, "GAME OVER" +
-                    "\nScore: " + (SNAKE.getTailLength()) + " out of " + (gridSizeHorizontal * gridSizeVertical) +
+                    "\nScore: " + (SNAKE.getTailLength() + 1) + " out of " + (gridSizeHorizontal * gridSizeVertical) +
                     "\nQuit?");
             if (answer == JOptionPane.YES_OPTION) {
                 System.exit(0);
@@ -112,12 +113,6 @@ public class game {
                 System.exit(0);
             }
         }
-    }
-
-    static void resetGame(){
-        System.out.println("Resetting game");
-        frameInterface.closeFrame();
-        init();
     }
 
     static void update(){
@@ -138,6 +133,7 @@ public class game {
         //Ate fruit
         if(frameInterface.getCell(SNAKE.getPosHorizontal(), SNAKE.getPosVertical()).getContent().equals("FRUIT")){
             SNAKE.addTail = true;
+            frameInterface.updateScoreLabel(SNAKE.getTailLength() + 2);
             ateFruit = true;
 
         }
