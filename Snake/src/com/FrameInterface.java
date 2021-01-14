@@ -68,6 +68,14 @@ class FrameInterface extends JFrame implements KeyListener {
         }
     }
 
+    public void setShowCycleValues(boolean show){
+        for (int v = 0; v < sizeVertical; v++){
+            for (int h = 0; h < sizeHorizontal; h++){
+                cells[v][h].setShowCycleValue(show);
+            }
+        }
+    }
+
     public void updateFruit(){
         ArrayList<cell> emptyCells = new ArrayList<>();
         for (int v = 0; v < sizeVertical; v++){

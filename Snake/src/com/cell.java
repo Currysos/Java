@@ -43,7 +43,13 @@ class cell {
 
     public void setCycleValue(int value){
         cycleValue = value;
-        cellBackground.setText(String.valueOf(value));
+    }
+    public void setShowCycleValue(boolean show){
+        if(show){
+            cellBackground.setText(String.valueOf(cycleValue));
+        } else{
+            cellBackground.setText("");
+        }
     }
     public int getCycleValue(){
         return cycleValue;

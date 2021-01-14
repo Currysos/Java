@@ -18,11 +18,11 @@ public class game {
     static int speed;
 
     static final boolean useAI = true;
-    static boolean gameIsRunning = true;
+    static boolean gameIsRunning = true, showCellValues = false;
 
     public static void main(String[] args) {
-        gridSizeHorizontal = 30;
-        gridSizeVertical = 30;
+        gridSizeHorizontal = 16;
+        gridSizeVertical = 12;
         speed = 200;
         init();
     }
@@ -67,6 +67,10 @@ public class game {
                     gameIsRunning = true;
                 }
                 break;
+            case 'c':
+                showCellValues = !showCellValues;
+                frameInterface.setShowCycleValues(showCellValues);
+                break;
             default:
                 break;
         }
@@ -94,7 +98,7 @@ public class game {
             System.out.println("GAME OVER");
 
             int answer = JOptionPane.showConfirmDialog(frameInterface.frame, "GAME OVER" +
-                    "\nScore: " + (SNAKE.getTailLength() + 1) + " out of " + (gridSizeHorizontal * gridSizeVertical) +
+                    "\nScore: " + (SNAKE.getTailLength()) + " out of " + (gridSizeHorizontal * gridSizeVertical) +
                     "\nQuit?");
             if (answer == JOptionPane.YES_OPTION) {
                 System.exit(0);
@@ -153,7 +157,7 @@ public class game {
         if(ateFruit) { frameInterface.updateFruit(); }
 
         //Got max points
-        if(SNAKE.getTailLength() + 2 == gridSizeHorizontal * gridSizeVertical) {
+        if(SNAKE.getTailLength() + 1 == gridSizeHorizontal * gridSizeVertical) {
             endGame("WIN");
         }
     }

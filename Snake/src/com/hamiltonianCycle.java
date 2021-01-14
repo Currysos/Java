@@ -34,5 +34,7 @@ public class hamiltonianCycle {
                 index++;
             }
         }
+
+        frameInterface.setShowCycleValues(game.showCellValues);
     }
 }
