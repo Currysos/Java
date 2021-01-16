@@ -11,6 +11,7 @@ public class hamiltonianCycle {
         this.frameInterface = frameInterface;
 
         generateCycle();
+        System.out.println("Done generating hamiltonian cycle");
     }
 
     void generateCycle(){

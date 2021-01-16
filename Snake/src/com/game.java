@@ -17,11 +17,11 @@ public class game {
     static int speed;
 
     static final boolean useAI = true;
-    static boolean gameIsRunning = true, showCellValues = false;
+    static boolean gameIsRunning = true, showCellValues = false, superSpeed = true;
 
     public static void main(String[] args) {
-        gridSizeHorizontal = 16;
-        gridSizeVertical = 9;
+        gridSizeHorizontal = 100;
+        gridSizeVertical = 100;
         speed = 200;
         init();
     }
@@ -33,9 +33,22 @@ public class game {
 
         //Start Sequence
         updateTimer(0);
+        if(superSpeed){
+            engageSuperSpeed();
+        }
+
+    }
+
+    static void engageSuperSpeed() {
+        timer.cancel();
+        while (superSpeed) {
+            AI.updateCycle();
+            update();
+        }
     }
 
     static void keyWasPressed(KeyEvent e){
+        System.out.println("Pressed: " + e.getKeyChar());
         switch (e.getKeyChar()){
             case 'w':
                 SNAKE.rotate(1);
@@ -70,6 +83,14 @@ public class game {
                 showCellValues = !showCellValues;
                 frameInterface.setShowCycleValues(showCellValues);
                 break;
+            case ' ':
+                superSpeed = !superSpeed;
+                if(superSpeed){
+                    engageSuperSpeed();
+                } else {
+                    updateTimer(0);
+                }
+                break;
             default:
                 break;
         }
@@ -81,6 +102,7 @@ public class game {
             speed = 1;
         }
         frameInterface.updateSpeedLabel(speed);
+        System.out.println("Updated delay to: " + speed + "ms between updates");
         timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
@@ -92,7 +114,10 @@ public class game {
     }
 
     static void endGame(String condition){
-        timer.cancel();
+        if(!superSpeed){
+            timer.cancel();
+        }
+        superSpeed = false;
         //Exit sequence
         if(condition.equals("LOSS")) {
             System.out.println("GAME OVER");

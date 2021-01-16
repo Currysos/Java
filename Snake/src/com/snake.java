@@ -18,9 +18,8 @@ public class snake {
         this.posHorizontal = posHorizontal;
         this.dir = dir;
         this.addTail = false;
-    }
-    public void setAddTail(boolean bool){
-        addTail = bool;
+
+        System.out.println("Done creating Snake");
     }
     public int getPosVertical() {
         return posVertical;
@@ -39,13 +38,13 @@ public class snake {
         for (int i = tails.size() - 1; i >= 0; i--){
             if (i == tails.size() - 1 && addTail) {
                 tails.add(new tail(tails.get(tails.size() - 1).getPosHorizontal(), tails.get(tails.size() - 1).getPosVertical()));
+                System.out.println("Added tail");
             }
             if(i == 0){
                 tails.get(i).setPosition(posHorizontal, posVertical);
             } else {
                 tails.get(i).setPosition(tails.get(i - 1).getPosHorizontal(), tails.get(i - 1).getPosVertical());
             }
-
         }
         addTail = false;
 

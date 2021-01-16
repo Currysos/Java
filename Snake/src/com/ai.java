@@ -11,6 +11,7 @@ public class ai {
         //init variables
         currentCellValue = game.frameInterface.getCell(game.SNAKE.getPosHorizontal(), game.SNAKE.getPosVertical()).getCycleValue();
         fruitCellValue = game.frameInterface.fruitCell.getCycleValue();
+        System.out.println("Current cell value:" + currentCellValue);
 
         if(currentCellValue == target){
             //hit the target
@@ -23,7 +24,7 @@ public class ai {
             }
         }
 
-        tailValue = game.SNAKE.getTail(game.SNAKE.getTailLength() - 1).getTailCellValue();
+        tailValue = game.SNAKE.getTail(game.SNAKE.getTailLength() - 1).getTailCellValue() - 3;
 
         int[] bodyValues = new int[game.SNAKE.getTailLength() + 1];
         bodyValues[0] = currentCellValue;

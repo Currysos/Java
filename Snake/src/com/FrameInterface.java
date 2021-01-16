@@ -22,7 +22,7 @@ class FrameInterface extends JFrame implements KeyListener {
 
         //------frame------
         frame = new JFrame("Snake");
-        frame.setSize((int) (1000 * (1.0f * sizeHorizontal/sizeVertical)), 1000);
+        frame.setSize((int) (800 * (1.0f * sizeHorizontal/sizeVertical)), 800);
         frame.setFocusable(true);
         frame.addKeyListener(this);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -75,6 +75,7 @@ class FrameInterface extends JFrame implements KeyListener {
         frame.add(gamePanel, BorderLayout.CENTER);
 
         frame.setVisible(true);
+        System.out.println("Done Initializing frame");
     }
 
     public void updateCell(int horizontalPos, int verticalPos, String _content){
@@ -83,18 +84,6 @@ class FrameInterface extends JFrame implements KeyListener {
     public cell getCell(int horizontalPos, int verticalPos){
         return cells[verticalPos][horizontalPos];
     }
-    public cell getCellFromValue(int value){
-        if(value == Integer.MAX_VALUE) { return null; }
-
-        for (int v = 0; v < sizeVertical; v++){
-            for (int h = 0; h < sizeHorizontal; h++){
-                if(cells[v][h].getCycleValue() == value){
-                    return cells[v][h];
-                }
-            }
-        }
-        return null;
-    }
 
     public void clearCells(){
         for (int v = 0; v < sizeVertical; v++){
@@ -102,6 +91,7 @@ class FrameInterface extends JFrame implements KeyListener {
                 cells[v][h].updateCell("EMPTY");
             }
         }
+        System.out.println("Cleared all cells to empty");
     }
 
     public void setShowCycleValues(boolean show){
@@ -110,6 +100,8 @@ class FrameInterface extends JFrame implements KeyListener {
                 cells[v][h].setShowCycleValue(show);
             }
         }
+
+        System.out.println("Set show cycle values to: " + show);
     }
 
     public void updateFruit(){
@@ -125,25 +117,15 @@ class FrameInterface extends JFrame implements KeyListener {
         fruitCell = emptyCells.get(rand.nextInt(emptyCells.size()));
         fruitCell.updateCell("FRUIT");
         System.out.println("Added fruit to cell: " + fruitCell.getCycleValue());
-        System.out.println("Number of empty cells: " + emptyCells.size());
-    }
-
-    public void closeFrame(){
-        frame.setVisible(false);
     }
 
     public void updateScoreLabel(int newScore){
         scoreLabel.setText("Score: " + newScore);
+        System.out.println("Set score label to: " + newScore);
     }
     public void updateSpeedLabel(int newSpeed){
         speedLabel.setText("Delay: " + newSpeed);
-    }
-    public void updateCurrentControlModeLabel(boolean useAIControl){
-        if(useAIControl){
-            currentControlModeLabel.setText("Control type: AI");
-        } else {
-            currentControlModeLabel.setText("Control type: Player");
-        }
+        System.out.println("Set speed label to: " + newSpeed);
     }
 
     @Override
