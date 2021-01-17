@@ -20,8 +20,8 @@ public class game {
     static boolean gameIsRunning = true, showCellValues = false, superSpeed = true;
 
     public static void main(String[] args) {
-        gridSizeHorizontal = 100;
-        gridSizeVertical = 100;
+        gridSizeHorizontal = 50;
+        gridSizeVertical = 50;
         speed = 200;
         init();
     }
