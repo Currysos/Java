@@ -18,8 +18,8 @@ public class game {
 
     static int speed;
 
-    static final boolean useAI = true;
-    static boolean gameIsRunning = true, showCellValues = false, superSpeed = true;
+    static final boolean useAI = false;
+    static boolean gameIsRunning = true, showCellValues = false, superSpeed = false;
 
     //TODO make options panel
     public static void main(String[] args) {
