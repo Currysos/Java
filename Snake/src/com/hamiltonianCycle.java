@@ -5,6 +5,7 @@ public class hamiltonianCycle {
     int gridSizeVertical;
     FrameInterface frameInterface;
 
+    //TODO Create a better random hamiltonian cycle
     public hamiltonianCycle(int gridSizeHorizontal, int gridSizeVertical, FrameInterface frameInterface) {
         this.gridSizeHorizontal = gridSizeHorizontal;
         this.gridSizeVertical = gridSizeVertical;

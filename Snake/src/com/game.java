@@ -2,6 +2,8 @@ package com;
 
 import javax.swing.*;
 import java.awt.event.*;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -19,6 +21,7 @@ public class game {
     static final boolean useAI = true;
     static boolean gameIsRunning = true, showCellValues = false, superSpeed = true;
 
+    //TODO make options panel
     public static void main(String[] args) {
         gridSizeHorizontal = 50;
         gridSizeVertical = 50;
@@ -122,18 +125,16 @@ public class game {
         if(condition.equals("LOSS")) {
             System.out.println("GAME OVER");
 
-            int answer = JOptionPane.showConfirmDialog(frameInterface.frame, "GAME OVER" +
-                    "\nScore: " + (SNAKE.getTailLength() + 1) + " out of " + (gridSizeHorizontal * gridSizeVertical) +
-                    "\nQuit?");
+            int answer = JOptionPane.showConfirmDialog(frameInterface.frame, "\nScore: " + (SNAKE.getTailLength() + 1) + " out of " + (gridSizeHorizontal * gridSizeVertical) +
+                                "\nQuit?", "GAME OVER", JOptionPane.YES_NO_OPTION);
             if (answer == JOptionPane.YES_OPTION) {
                 System.exit(0);
             }
-        }else if (condition.equals("WIN")){
+        } else if (condition.equals("WIN")) {
             System.out.println("GAME OVER, YOU WON");
 
-            int answer = JOptionPane.showConfirmDialog(frameInterface.frame, "YOU WON" +
-                    "\nYou got a full score of " + (gridSizeHorizontal * gridSizeVertical) +
-                    "\nQuit?");
+            int answer = JOptionPane.showConfirmDialog(frameInterface.frame, "\nYou got a full score of " + (gridSizeHorizontal * gridSizeVertical) +
+                    "\nQuit?", "YOU WON", JOptionPane.YES_NO_OPTION);
             if (answer == JOptionPane.YES_OPTION) {
                 System.exit(0);
             }

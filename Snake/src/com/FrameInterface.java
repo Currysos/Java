@@ -26,6 +26,7 @@ class FrameInterface extends JFrame implements KeyListener {
         frame.setFocusable(true);
         frame.addKeyListener(this);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setBackground(Color.BLACK);
         frame.setLayout(new BorderLayout());
 
         //------Game panel------
