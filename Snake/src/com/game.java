@@ -23,8 +23,8 @@ public class game {
 
     //TODO make options panel
     public static void main(String[] args) {
-        gridSizeHorizontal = 50;
-        gridSizeVertical = 50;
+        gridSizeHorizontal = 30;
+        gridSizeVertical = 30;
         speed = 200;
         init();
     }

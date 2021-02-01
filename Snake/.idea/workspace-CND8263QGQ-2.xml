@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Snake:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="43500686-a514-42af-8f8b-f061954d2f86" name="Default Changelist" comment="Fixed ai so it works!!!&#10;&#10;also fixed the way the updateUI thing works so performance improvement and added &quot;P&quot; for pause the game.">
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/com/game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/com/game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="924dad1a-4bce-4293-a135-16e234e6beb2" />
+  </component>
+  <component name="ProjectId" id="1mfbXABHsL06pElukDpKnAaYuU2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nohjg\OneDrive\Codes\Java\Snake" />
+      <recent name="C:\Users\nohjg\OneDrive\Codes\Java\Snake\src\com" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.game">
+    <configuration name="game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.game" />
+      <module name="Snake" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Snake" type="JarApplication">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Snake_jar/Snake.jar" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Noah.hjerdin\OneDrive\Codes\Java\Snake" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.game" />
+      <item itemvalue="JAR Application.Snake" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.game" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="43500686-a514-42af-8f8b-f061954d2f86" name="Default Changelist" comment="" />
+      <created>1609887633427</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609887633427</updated>
+      <workItem from="1609887634652" duration="1080000" />
+      <workItem from="1609945006672" duration="21397000" />
+      <workItem from="1609972040779" duration="137000" />
+      <workItem from="1609972274829" duration="1203000" />
+      <workItem from="1609973588311" duration="415000" />
+      <workItem from="1609974596258" duration="4799000" />
+      <workItem from="1609980030773" duration="83000" />
+      <workItem from="1610231227052" duration="8554000" />
+      <workItem from="1610362156675" duration="15985000" />
+      <workItem from="1610443889930" duration="14145000" />
+      <workItem from="1610527182131" duration="17486000" />
+      <workItem from="1610619141112" duration="242000" />
+      <workItem from="1610619688559" duration="9610000" />
+      <workItem from="1610714604948" duration="2575000" />
+      <workItem from="1610815916213" duration="268000" />
+    </task>
+    <task id="LOCAL-00001" summary="changed to nicer colors">
+      <created>1609976871682</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609976871684</updated>
+    </task>
+    <task id="LOCAL-00002" summary="changed to nicer colors">
+      <created>1609977866375</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609977866375</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added artifact and fixing bugs">
+      <created>1609979078799</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609979078799</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fixing bugs">
+      <created>1609979635028</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609979635028</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Updated graphics and button mapping&#10;&#10;It is now WASD to steer and R/F to change speed">
+      <created>1610237475531</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1610237475531</updated>
+    </task>
+    <task id="LOCAL-00006" summary="devided classes up to different files">
+      <created>1610240025943</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1610240025943</updated>
+    </task>
+    <task id="LOCAL-00007" summary="AI is hard....... CAN ANYONE HELP MEE??? I need help with my life!!">
+      <created>1610471817942</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1610471817942</updated>
+    </task>
+    <task id="LOCAL-00008" summary="AI is hard....... CAN ANYONE HELP MEE??? I need help with my life!!">
+      <created>1610471843163</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1610471843163</updated>
+    </task>
+    <task id="LOCAL-00009" summary="IntelliJ things">
+      <created>1610471880939</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1610471880939</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fixed ai so it works!!!&#10;&#10;also fixed the way the updateUI thing works so performance improvement and added &quot;P&quot; for pause the game.">
+      <created>1610578362977</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1610578362977</updated>
+    </task>
+    <task id="LOCAL-00011" summary="things i thought i committed....">
+      <created>1610620097502</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1610620097502</updated>
+    </task>
+    <task id="LOCAL-00012" summary="updated ai">
+      <created>1610621409493</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1610621409493</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fixed winning condition bug&#10;&#10;added &quot;c&quot; to control if show cell values.">
+      <created>1610622409928</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1610622409929</updated>
+    </task>
+    <task id="LOCAL-00014" summary="i  dont even know anymore">
+      <created>1610622862878</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1610622862878</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added some more UI">
+      <created>1610627066204</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1610627066204</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="a bunch of code, including my submission to programmerings olympiaden and SNAKE with swing!!" />
+    <MESSAGE value="prog olymp + SNAKE!!!" />
+    <MESSAGE value="bulls and cows" />
+    <MESSAGE value="changed to nicer colors" />
+    <MESSAGE value="added artifact and fixing bugs" />
+    <MESSAGE value="fixing bugs" />
+    <MESSAGE value="Updated graphics and button mapping&#10;&#10;It is now WASD to steer and R/F to change speed" />
+    <MESSAGE value="devided classes up to different files" />
+    <MESSAGE value="AI is hard....... CAN ANYONE HELP MEE??? I need help with my life!!" />
+    <MESSAGE value="IntelliJ things" />
+    <MESSAGE value="Fixed ai so it works!!!&#10;&#10;also fixed the way the updateUI thing works so performance improvement and added &quot;P&quot; for pause the game." />
+    <MESSAGE value="things i thought i committed...." />
+    <MESSAGE value="updated ai" />
+    <MESSAGE value="fixed winning condition bug&#10;&#10;added &quot;c&quot; to control if show cell values." />
+    <MESSAGE value="i  dont even know anymore" />
+    <MESSAGE value="Added some more UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some more UI" />
+  </component>
+</project>
